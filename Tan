@@ -1,0 +1,33 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class XeMay : public virtual PhuongTien{
+	protected:
+		float dungTichXiLanh;
+		int kieuXe;
+	public:	
+	void nhapThongTin(){
+		PhuongTien::nhapThongTin();
+		cout<<"Nhap dung tich xi lanh cua xe: ";
+		cin>>dungTichXiLanh;
+		cin.ignore();
+		do {
+			cout<<"Nhap kieu xe (1- Xe tay ga; 2- Xe so; 3- Xe con): ";
+			cin>>kieuXe;cin.ignore();
+			if (kieuXe !=1 && kieuXe !=2 && kieuXe !=3 ){
+				cout<<"Kieu xe khong hop le. Vui long nhap lai."<<endl;
+			}
+		} while (kieuXe !=1 && kieuXe !=2 && kieuXe !=3);
+	}
+	void hienThiThongTin(){
+		PhuongTien::hienThiThongTin();
+		cout<<"|Dung tich xi lanh cua xe: "<<dungTichXiLanh<<"cc"<<endl;
+		cout<<"|Kieu xe: "<<(kieuXe ==1? "Xe tay ga" :(kieuXe==2? "Xe so" :  (kieuXe==3? "Xe con")))<<endl;
+		cout << "________________________________" << endl; 
+		
+		
+	}
+};
+int main(){
+	return 0;
+}
